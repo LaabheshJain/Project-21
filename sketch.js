@@ -12,7 +12,6 @@ function setup() {
   wall=createSprite(1200, 200, thickness, height/2); 
   wall.shapeColor=color(80,80,80);
   bullet=createSprite(50, 200, 40, 15);
-  bullet.velocityX = speed;
   bullet.shapeColor=color(255,255,255);
 
 }
@@ -20,6 +19,8 @@ function setup() {
 function draw() {
   background(0,0,0);  
 
+  if (keyCode === "32"){  bullet.velocityX = speed;}
+  
   if (hasCollided(bullet,wall))
   {
     bullet.velocityX=0;
